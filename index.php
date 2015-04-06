@@ -5,7 +5,7 @@
 		 $GREETING = 'Thank you '. $UNAME.'.';
 
 		 } else { 
-		 $GREETING = 'Welcome Guest. <a href="#" class="my_popup_open">Log on</a> for recommendations.'; 
+		 $GREETING = 'Welcome. <a href="#" class="my_popup_open">Log on</a> for recommendations.'; 
 		 }
 		 $CARTCOUNT = 0;
 		 
@@ -111,10 +111,51 @@
 //This is JS comment syntax.
 //cookie will go here.
 
+function mixCookie() {
+
+      var name = document.forms["form1"]["name"].value;
+
+        bakeCookie("readuser", name, 365);
+      
+   }
+   
+function bakeCookie(cname, cvalue1, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+d.toGMTString();
+    document.cookie = cname + "=" + cvalue1 + ";" + expires;
+}
+
+//TWO FUNCTIONS TO GET THE COOKIE
+
+function checkCookie() {
+
+    var userdeets = getCookie("readuser");
+    if (userdeets != "") {
+      var deets = userdeets.split("%-");
+    var user = deets[0];
+    namediv.innerHTML = '';
+    greeting.innerHTML = 'Welcome ' + user;
+    document.getElementById('deletecookie').style.display = "block";
+  } else { return "";
+  }
+}
+
+function getCookie(cname) {
+
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+        var c = ca[i].trim();
+        if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+    }
+    return "";
+}
+
 </script>
 
  </head>
- <body>
+ <body onload="checkCookie()">
  <div style="width:100%; height:25%; background-color:#57585A;">
  <img src="img/ic1.jpg" style="max-height: 100%;">
     <div style="float:right; margin-right:75px;margin-top:10px; color:white;"> Cart: <?php echo $CARTCOUNT ?> </div>
