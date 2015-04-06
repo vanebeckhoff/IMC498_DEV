@@ -134,9 +134,9 @@ function checkCookie() {
     if (userdeets != "") {
       var deets = userdeets.split("%-");
     var user = deets[0];
-    namediv.innerHTML = '';
+    //namediv.innerHTML = '';
     greeting.innerHTML = 'Welcome ' + user;
-    document.getElementById('deletecookie').style.display = "block";
+    //document.getElementById('deletecookie').style.display = "block";
   } else { return "";
   }
 }
@@ -155,7 +155,7 @@ function getCookie(cname) {
 </script>
 
  </head>
- <body onload="checkCookie()">
+ <body onLoad="checkCookie()">
  <div style="width:100%; height:25%; background-color:#57585A;">
  <img src="img/ic1.jpg" style="max-height: 100%;">
     <div style="float:right; margin-right:75px;margin-top:10px; color:white;"> Cart: <?php echo $CARTCOUNT ?> </div>
@@ -207,7 +207,7 @@ function getCookie(cname) {
 	     <div>Please enter your name:</div>
 	
     <input name="name" id="uname" type="text" /><p>
-	<input type="submit" onclick="mixCookie();" value="Log In"/> <p>
+	<input type="submit" onClick="mixCookie();" value="Log In"/> <p>
 	</form>
 	</div>
 
