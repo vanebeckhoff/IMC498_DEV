@@ -12,7 +12,7 @@
 ?>
 
 <html>
-<!--THIS IS HTML COMMENT SYNTAX -->
+<!--BELOW IS THE HTML GIVING THE FOUR BOXES THEIR SIZE LOCATION AND LOOK-->
 
  <head>
 
@@ -108,8 +108,7 @@
 
 <script language="JavaScript">
 
-//This is JS comment syntax.
-//cookie will go here.
+//BELOW IS THE CODE FOR THE COOKIE AND THE FUNCTIONS
 
 function mixCookie() {
 
@@ -126,7 +125,7 @@ function bakeCookie(cname, cvalue1, exdays) {
     document.cookie = cname + "=" + cvalue1 + ";" + expires;
 }
 
-//TWO FUNCTIONS TO GET THE COOKIE
+//THESE ARE THE TWO FUNCTIONS THAT ACTIVATE THE COOKIE
 
 function checkCookie() {
 
@@ -151,6 +150,8 @@ function getCookie(cname) {
     }
     return "";
 }
+
+//BELOW IS ALL THE TEXT FROM THE PAGE
 
 </script>
 
